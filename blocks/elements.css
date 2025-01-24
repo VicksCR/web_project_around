@@ -1,0 +1,55 @@
+.elements {
+  max-width: 880px;
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr auto 1fr auto;
+  padding: 50px;
+  gap: 17px 20px;
+  /*
+  grid-template-areas:
+  ;*/
+}
+
+.element {
+  max-width: 282px;
+  width: 100%;
+  max-height: 361px;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.element-image {
+  max-width: 282px;
+  width: 100%;
+  max-height: 282px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.element__group {
+  width: 246px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 21px;
+}
+
+.element__title {
+  font-family: "InterBlack";
+  font-style: normal;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 29px;
+  color: #000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.element__like-button {
+  max-width: 21px;
+  width: 100%;
+}
