@@ -10,3 +10,15 @@
   margin: auto;
   padding-top: 45px;
 }
+
+@media screen and (max-width: 320px) {
+  .header {
+    max-width: 320px;
+  }
+
+  .header__logo {
+    width: 320px;
+    height: 56px;
+    padding-top: 28px;
+  }
+}
