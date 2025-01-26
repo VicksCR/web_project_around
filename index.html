@@ -26,11 +26,14 @@
       </header>
       <main class="content">
         <section class="profile">
-          <img
-            src="./images/avatar.png"
-            alt="Avatar with profile image"
-            class="profile__avatar"
-          />
+          <div class="profile__avatar-container">
+            <div class="profile__avatar-circle"></div>
+            <img
+              src="./images/avatar.png"
+              alt="Avatar with profile image"
+              class="profile__avatar"
+            />
+          </div>
           <div class="profile__info">
             <div class="profile__info_data-container">
               <h1 class="profile__name">Jacques Cousteau</h1>
@@ -54,18 +57,21 @@
         </section>
         <section class="elements">
           <div class="element">
+            <div class="element-rectangle"></div>
             <img
               class="element-image"
               src="./images/elements-image1.png"
               alt="Foto de Valle de Yosemite"
             />
             <div class="element__group">
-              <p class="element__title">Valle de Yosemite</p>
-              <img
-                class="element__like-button"
-                src="./images/like-button.svg"
-                alt="boton me gusta"
-              />
+              <h2 class="element__title">Valle de Yosemite</h2>
+              <button type="button" class="element__like-button">
+                <img
+                  class="element__like-button-image"
+                  src="./images/like-button.svg"
+                  alt="boton me gusta"
+                />
+              </button>
             </div>
           </div>
 

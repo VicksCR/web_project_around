@@ -18,6 +18,10 @@
   background-color: #ffffff;
 }
 
+.element-rectangle {
+  background: #ffffff;
+}
+
 .element-image {
   max-width: 282px;
   width: 100%;
@@ -25,14 +29,14 @@
   height: 100%;
   object-fit: cover;
 }
-
+/*
 .element__group {
   width: 246px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 21px;
-}
+}*/
 
 .element__title {
   font-family: "InterBlack";
@@ -45,8 +49,8 @@
   white-space: nowrap;
   overflow: hidden;
 }
-
-.element__like-button {
+/*
+.element__like-button-image {
   max-width: 21px;
   width: 100%;
 }
