@@ -19,7 +19,10 @@
 }
 
 .element-rectangle {
-  background: #ffffff;
+  max-width: 282px;
+  width: 100%;
+  max-height: 361px;
+  border-radius: 10px;
 }
 
 .element-image {
@@ -29,14 +32,14 @@
   height: 100%;
   object-fit: cover;
 }
-/*
+
 .element__group {
   width: 246px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 21px;
-}*/
+  margin: auto;
+}
 
 .element__title {
   font-family: "InterBlack";
@@ -49,10 +52,18 @@
   white-space: nowrap;
   overflow: hidden;
 }
-/*
+
+.element__like-button {
+  width: 21px;
+  height: 19px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
 .element__like-button-image {
   max-width: 21px;
-  width: 100%;
 }
 
 @media screen and (max-width: 320px) {
