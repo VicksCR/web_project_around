@@ -34,7 +34,7 @@
   justify-content: center;
 }
 
-.profile__info_data-container {
+.profile__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -69,7 +69,7 @@
   opacity: 0.6;
 }
 
-.profile__edit-button_image {
+.profile__edit-button-image {
   max-width: 10px;
 }
 
@@ -103,7 +103,7 @@
   opacity: 0.6;
 }
 
-.profile__add-button_image {
+.profile__add-button-image {
   max-width: 22px;
   max-height: 22px;
 }
