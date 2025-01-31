@@ -60,10 +60,23 @@
   border: none;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 
 .element__like-button-image {
   max-width: 21px;
+}
+
+.element__like-button-image:hover {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 950px) {
+  .elements {
+    grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+    justify-items: center;
+    padding-top: 80px;
+  }
 }
 
 @media screen and (max-width: 320px) {

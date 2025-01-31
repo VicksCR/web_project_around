@@ -47,34 +47,43 @@
             </div>
             <p class="profile__aboutme">Explorador</p>
           </div>
-
-          <div class="popup__container">
-            <form class="popup__form">
-              <div class="popup__close">X</div>
-              <h2 class="popup__title">Editar perfil</h2>
-              <fieldset class="popup__fieldset">
-                <input
-                  type="text"
-                  id="first-name"
-                  name="first-name"
-                  placeholder="Nombre"
-                  class="popup__input"
+          <section class="popup">
+            <div class="popup__container">
+              <form class="popup__form">
+                <img
+                  src="./images/Close Icon.png"
+                  alt="icono X para cerrar"
+                  class="popup__close-image"
                 />
-              </fieldset>
-              <fieldset class="popup__fieldset">
-                <input
-                  type="text"
-                  id="about-me"
-                  name="about-me"
-                  placeholder="Acerca de mí"
-                  class="popup__input"
-                />
-              </fieldset>
-              <fieldset class="popup__submit-button">
-                <button type="submit" class="">Guardar</button>
-              </fieldset>
-            </form>
-          </div>
+                <h2 class="popup__title">Editar perfil</h2>
+                <fieldset class="popup__fieldset">
+                  <input
+                    type="text"
+                    id="first-name"
+                    name="first-name"
+                    placeholder="Nombre"
+                    class="popup__input"
+                    required
+                  />
+                </fieldset>
+                <fieldset class="popup__fieldset">
+                  <input
+                    type="text"
+                    id="about-me"
+                    name="about-me"
+                    placeholder="Acerca de mí"
+                    class="popup__input popup__input-about"
+                    required
+                  />
+                </fieldset>
+                <fieldset class="popup__fieldset">
+                  <button type="submit" class="popup__submit-button">
+                    Guardar
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+          </section>
 
           <button type="button" class="profile__add-button">
             <img
