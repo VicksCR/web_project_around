@@ -18,6 +18,12 @@
   white-space: nowrap;
 }
 
+@media screen and (max-width: 768px) {
+  .footer {
+    width: 90%;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .footer {
     max-width: 282px;
