@@ -1,16 +1,16 @@
-let popupButton = document.querySelector(".profile__edit-button");
+const popupButton = document.querySelector(".profile__edit-button");
 
-let profileName = document.querySelector(".profile__name");
-let profileAboutMe = document.querySelector(".profile__aboutme");
+const profileName = document.querySelector(".profile__name");
+const profileAboutMe = document.querySelector(".profile__aboutme");
 
-let popUp = document.querySelector(".popup");
-let popUpClosedButton = document.querySelector(".popup__close-image");
+const popUp = document.querySelector(".popup");
+const popUpClosedButton = document.querySelector(".popup__close-image");
 
-let formInputName = document.querySelector(".popup__input");
-let formInputAboutMe = document.querySelector(".popup__input-about");
+const formInputName = document.querySelector(".popup__input");
+const formInputAboutMe = document.querySelector(".popup__input-about");
 
-let formProfileName = document.querySelector(".popup__form");
-let formProfileAboutMe = document.querySelector(".popup__form");
+const formProfileName = document.querySelector(".popup__form");
+const formProfileAboutMe = document.querySelector(".popup__form");
 
 function handleOpenPopup() {
   popUp.classList.add("popup__opened");
