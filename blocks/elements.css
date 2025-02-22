@@ -65,6 +65,11 @@
   opacity: 0.5;
 }
 
+.element__like-button-image-active {
+  background: url(../images/like-button-active.png) center no-repeat;
+  max-width: 21px;
+}
+
 @media screen and (max-width: 950px) {
   .elements {
     grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));

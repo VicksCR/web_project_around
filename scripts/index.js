@@ -80,7 +80,14 @@ function createCard(card) {
   elementCardUrlImage.src = card.link;
   elementCardUrlImage.alt = card.name;
 
-  //
+  const CardLikeButtonActive = cardElementClone.querySelector(
+    ".element__like-button-image"
+  );
+
+  CardLikeButtonActive.addEventListener("click", function (evt) {
+    CardLikeButtonActive.classList.toggle("element__like-button-image-active");
+  });
+
   CardsContainer.prepend(cardElementClone);
 }
 
