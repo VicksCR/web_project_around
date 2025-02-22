@@ -88,6 +88,14 @@ function createCard(card) {
     CardLikeButtonActive.classList.toggle("element__like-button-image-active");
   });
 
+  const deleteCardButton = cardElementClone.querySelector(
+    "#delete-card-button"
+  );
+
+  deleteCardButton.addEventListener("click", function (evt) {
+    cardElementClone.remove();
+  });
+
   CardsContainer.prepend(cardElementClone);
 }
 
