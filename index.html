@@ -37,7 +37,13 @@
           <div class="profile__info">
             <div class="profile__container">
               <h1 class="profile__name">Jacques Cousteau</h1>
-              <button type="button" class="profile__edit-button">
+
+              <!--Boton para editar el perfil-->
+              <button
+                type="button"
+                class="profile__edit-button"
+                id="button-edit-profile"
+              >
                 <img
                   class="profile__edit-button-image"
                   src="./images/edit-button.png"
@@ -47,13 +53,16 @@
             </div>
             <p class="profile__aboutme">Explorador</p>
           </div>
-          <section class="popup">
+
+          <!--Popup para editar perfil-->
+          <section class="popup" id="popup-edit-profile">
             <div class="popup__container">
-              <form class="popup__form">
+              <form class="popup__form" id="popup-form-edit">
                 <img
                   src="./images/close-icon.png"
                   alt="icono X para cerrar"
                   class="popup__close-image"
+                  id="popup-close-edit-profile"
                 />
                 <h2 class="popup__title">Editar perfil</h2>
                 <fieldset class="popup__fieldset">
@@ -85,128 +94,77 @@
             </div>
           </section>
 
-          <button type="button" class="profile__add-button">
+          <!--Boton para anadir tarjeta con imagen-->
+          <button
+            type="button"
+            class="profile__add-button"
+            id="button-add-card"
+          >
             <img
               class="profile__add-button-image"
               src="./images/add-button.png"
               alt="Button to add profile information"
             />
           </button>
+
+          <!--Popup para anadir tarjeta-->
+          <section class="popup" id="popup-add-card">
+            <div class="popup__container">
+              <form class="popup__form" id="form-popup-add-card">
+                <img
+                  src="./images/close-icon.png"
+                  alt="icono X para cerrar"
+                  class="popup__close-image"
+                  id="popup-add-card-close"
+                />
+                <h2 class="popup__title">Nuevo lugar</h2>
+                <fieldset class="popup__fieldset">
+                  <input
+                    type="text"
+                    id="card-title"
+                    name="title"
+                    placeholder="Título"
+                    class="popup__input"
+                    required
+                  />
+                </fieldset>
+                <fieldset class="popup__fieldset">
+                  <input
+                    type="url"
+                    id="card-link-to-image"
+                    name="link to image"
+                    placeholder="Enlace a la imagen"
+                    class="popup__input popup__input-about"
+                    required
+                  />
+                </fieldset>
+                <fieldset class="popup__fieldset">
+                  <button type="submit" class="popup__submit-button">
+                    Crear
+                  </button>
+                </fieldset>
+              </form>
+            </div>
+          </section>
         </section>
-        <section class="elements">
-          <div class="element">
-            <div class="element-rectangle"></div>
-            <img
-              class="element-image"
-              src="./images/elements-image1.png"
-              alt="Foto de Valle de Yosemite"
-            />
-            <div class="element__group">
-              <h2 class="element__title">Valle de Yosemite</h2>
-              <button type="button" class="element__like-button">
-                <img
-                  class="element__like-button-image"
-                  src="./images/like-button.png"
-                  alt="boton me gusta"
-                />
-              </button>
-            </div>
-          </div>
 
-          <div class="element">
-            <div class="element-rectangle"></div>
-            <img
-              class="element-image"
-              src="./images/elements-image2.png"
-              alt="Foto de Lago Louise"
-            />
-            <div class="element__group">
-              <h2 class="element__title">Lago Louise</h2>
-              <button type="button" class="element__like-button">
-                <img
-                  class="element__like-button-image"
-                  src="./images/like-button.png"
-                  alt="boton me gusta"
-                />
-              </button>
+        <!--Template cards-->
+        <section class="elements" id="elements-container-cards">
+          <template id="template-card">
+            <div class="element">
+              <img id="popup-big-image" class="element__image" src="" alt="" />
+              <div class="element__group">
+                <h2 class="element__title"></h2>
+                <button type="button" class="element__like-button">
+                  <img
+                    class="element__like-button-image"
+                    src="./images/like-button.png"
+                    alt="boton me gusta"
+                  />
+                </button>
+              </div>
             </div>
-          </div>
-
-          <div class="element">
-            <div class="element-rectangle"></div>
-            <img
-              class="element-image"
-              src="./images/elements-image3.png"
-              alt="Foto de Montañas Calvas"
-            />
-            <div class="element__group">
-              <h2 class="element__title">Montañas Calvas</h2>
-              <button type="button" class="element__like-button">
-                <img
-                  class="element__like-button-image"
-                  src="./images/like-button.png"
-                  alt="boton me gusta"
-                />
-              </button>
-            </div>
-          </div>
-
-          <div class="element">
-            <div class="element-rectangle"></div>
-            <img
-              class="element-image"
-              src="./images/elements-image4.png"
-              alt="Foto de Latemar"
-            />
-            <div class="element__group">
-              <h2 class="element__title">Latemar</h2>
-              <button type="button" class="element__like-button">
-                <img
-                  class="element__like-button-image"
-                  src="./images/like-button.png"
-                  alt="boton me gusta"
-                />
-              </button>
-            </div>
-          </div>
-
-          <div class="element">
-            <div class="element-rectangle"></div>
-            <img
-              class="element-image"
-              src="./images/elements-image5.png"
-              alt="Foto de Vanois National"
-            />
-            <div class="element__group">
-              <h2 class="element__title">Vanois National Park</h2>
-              <button type="button" class="element__like-button">
-                <img
-                  class="element__like-button-image"
-                  src="./images/like-button.png"
-                  alt="boton me gusta"
-                />
-              </button>
-            </div>
-          </div>
-
-          <div class="element">
-            <div class="element-rectangle"></div>
-            <img
-              class="element-image"
-              src="./images/elements-image6.png"
-              alt="Foto de Lago di Braies"
-            />
-            <div class="element__group">
-              <h2 class="element__title">Lago di Braies</h2>
-              <button type="button" class="element__like-button">
-                <img
-                  class="element__like-button-image"
-                  src="./images/like-button.png"
-                  alt="boton me gusta"
-                />
-              </button>
-            </div>
-          </div>
+          </template>
         </section>
       </main>
       <footer class="footer">
