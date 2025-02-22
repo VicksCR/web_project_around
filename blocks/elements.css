@@ -16,6 +16,21 @@
   height: 100%;
   border-radius: 10px;
   background-color: #ffffff;
+  position: relative;
+}
+
+.element__delete-button {
+  width: 18px;
+  height: 19.3px;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.element__delete-button:hover {
+  opacity: 0.6;
 }
 
 .element__image {
@@ -24,6 +39,8 @@
   max-height: 282px;
   height: 100vh;
   object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .element__group {
