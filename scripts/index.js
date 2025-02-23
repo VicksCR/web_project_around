@@ -12,28 +12,28 @@ const formProfileAboutMe = document.querySelector("#popup-form-edit");
 //Tarjeta con arreglo
 const initialCards = [
   {
-    name: "Valle de Yosemite",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
-  },
-  {
-    name: "Lago Louise",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
-  },
-  {
-    name: "Montañas Calvas",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
   },
   {
     name: "Parque Nacional de la Vanoise",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
   },
   {
-    name: "Lago di Braies",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
+  },
+  {
+    name: "Montañas Calvas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
+  },
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
+  },
+  {
+    name: "Valle de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
   },
 ];
 const CardsContainer = document.querySelector("#elements-container-cards");
@@ -45,6 +45,14 @@ const templateElementCard = document.querySelector("#template-card");
 const inputCardTitle = document.querySelector("#card-title");
 const inputCardUrlImage = document.querySelector("#card-link-to-image");
 const formAddCard = document.querySelector("#form-popup-add-card");
+
+// popup image
+const popupLargeImage = document.querySelector("#popup-image");
+const popupImageElement = document.querySelector("#popup-large-image");
+const popupImageTitle = document.querySelector("#popup-big-image-title");
+const popupClosedLargeImage = document.querySelector(
+  "#popup-large-image-close"
+);
 
 // functions edit profile
 function handleOpenPopup() {
@@ -68,7 +76,6 @@ function handleChangeAboutMe(evt) {
 }
 
 //functions create new card
-
 function createCard(card) {
   const cardElementClone = templateElementCard.content
     .querySelector(".element")
@@ -79,6 +86,14 @@ function createCard(card) {
   elementCardTitle.textContent = card.name;
   elementCardUrlImage.src = card.link;
   elementCardUrlImage.alt = card.name;
+
+  //Large Image
+  elementCardUrlImage.addEventListener("click", function () {
+    popupImageElement.src = card.link;
+    popupImageElement.alt = card.name;
+    popupImageTitle.textContent = card.name;
+    popupLargeImage.classList.add("popup__opened");
+  });
 
   const CardLikeButtonActive = cardElementClone.querySelector(
     ".element__like-button-image"
@@ -96,6 +111,15 @@ function createCard(card) {
     cardElementClone.remove();
   });
 
+  popupClosedLargeImage.addEventListener("click", function () {
+    popupLargeImage.classList.remove("popup__opened");
+  });
+
+  popupButtonAddCard.addEventListener("click", handleOpenPopupAdd);
+  popupClosedAddCard.addEventListener("click", function () {
+    ClosePopupAdd();
+  });
+
   CardsContainer.prepend(cardElementClone);
 }
 
@@ -109,7 +133,7 @@ function ClosePopupAdd() {
   popupOpenAddCard.classList.remove("popup__opened");
 }
 
-//manejar envio de formulario
+//manejar envio de formulario nueva tarjeta
 function handleAddNewCard(evt) {
   evt.preventDefault();
   const newCard = {
@@ -120,6 +144,7 @@ function handleAddNewCard(evt) {
   ClosePopupAdd();
 }
 
+//events Add Card
 popupButtonAddCard.addEventListener("click", handleOpenPopupAdd);
 popupClosedAddCard.addEventListener("click", function () {
   ClosePopupAdd();

@@ -158,7 +158,12 @@
                 alt="boton para eliminar tarjeta"
                 id="delete-card-button"
               />
-              <img id="popup-big-image" class="element__image" src="" alt="" />
+              <img
+                id="popup-opener-big-image"
+                class="element__image"
+                src=""
+                alt=""
+              />
               <div class="element__group">
                 <h2 class="element__title"></h2>
                 <button type="button" class="element__like-button">
@@ -171,6 +176,25 @@
               </div>
             </div>
           </template>
+        </section>
+
+        <!--Popup para agrandar imagen-->
+        <section class="popup" id="popup-image">
+          <div class="popup__image-container">
+            <img
+              src="./images/close-icon.png"
+              alt="icono X para cerrar"
+              class="popup__close-image"
+              id="popup-large-image-close"
+            />
+            <img
+              id="popup-large-image"
+              class="popup__image-large"
+              src=""
+              alt=""
+            />
+            <h2 id="popup-big-image-title" class="popup__image-title"></h2>
+          </div>
         </section>
       </main>
       <footer class="footer">
