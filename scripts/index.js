@@ -123,6 +123,12 @@ function createCard(card) {
     }
   });
 
+  document.addEventListener("keydown", function (evt) {
+    if (evt.key === "Escape") {
+      popupLargeImage.classList.remove("popup__opened");
+    }
+  });
+
   popupButtonAddCard.addEventListener("click", handleOpenPopupAdd);
   popupClosedAddCard.addEventListener("click", function () {
     ClosePopupAdd();
@@ -165,6 +171,12 @@ popupOpenAddCard.addEventListener("click", function (evt) {
   }
 });
 
+document.addEventListener("keydown", function (evt) {
+  if (evt.key === "Escape") {
+    ClosePopupAdd();
+  }
+});
+
 //events Profile Edit
 popupButtonEditProfile.addEventListener("click", handleOpenPopup);
 formProfileName.addEventListener("submit", handleChangeFirstName);
@@ -175,6 +187,12 @@ popUpClosedEditButton.addEventListener("click", function () {
 
 popupEditProfile.addEventListener("click", function (evt) {
   if (evt.target.classList.contains("popup")) {
+    ClosePopUp();
+  }
+});
+
+document.addEventListener("keydown", (evt) => {
+  if (evt.key === "Escape") {
     ClosePopUp();
   }
 });
