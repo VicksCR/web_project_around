@@ -85,8 +85,7 @@
   background-color: transparent;
 }
 
-.popup__input,
-.popup__input-about {
+.popup__input {
   width: 100%;
   font-family: "InterMedium";
   font-size: 14px;
@@ -96,16 +95,41 @@
   border-bottom: 2px solid #c4c4c4;
   padding-bottom: 13px;
   color: #000000;
+  outline: none;
+}
+
+.popup__input:invalid,
+.popup__input_type_error {
+  border-bottom: 1px solid #ff0000;
+}
+
+.popup__input-error-message {
+  color: #ff0000;
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.52px;
+  display: none;
+}
+
+.popup__input-error-active {
+  opacity: 0.5;
+  display: block;
 }
 
 .popup__submit-button {
   width: 100%;
   height: 50.15px;
   background-color: #000000;
-  border: 1px solid #c4c4c4;
-  border-radius: 2px 0px 0px 0px solid #ffffff;
+  border: 2px solid #c4c4c4;
   color: #ffffff;
   cursor: pointer;
+}
+
+.popup__submit-button-disabled {
+  background-color: #ffffff;
+  color: #cccccc;
+  cursor: default;
 }
 
 .popup__submit-button:hover {

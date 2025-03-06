@@ -2,8 +2,10 @@ const popupButtonEditProfile = document.querySelector("#button-edit-profile");
 const profileName = document.querySelector(".profile__name");
 const profileAboutMe = document.querySelector(".profile__aboutme");
 
-const popUp = document.querySelector("#popup-edit-profile");
-const popUpClosedButton = document.querySelector("#popup-close-edit-profile");
+const popupEditProfile = document.querySelector("#popup-edit-profile");
+const popUpClosedEditButton = document.querySelector(
+  "#popup-close-edit-profile"
+);
 const formInputName = document.querySelector("#first-name");
 const formInputAboutMe = document.querySelector("#about-me");
 const formProfileName = document.querySelector("#popup-form-edit");
@@ -56,11 +58,11 @@ const popupClosedLargeImage = document.querySelector(
 
 // functions edit profile
 function handleOpenPopup() {
-  popUp.classList.add("popup__opened");
+  popupEditProfile.classList.add("popup__opened");
 }
 
 function ClosePopUp() {
-  popUp.classList.remove("popup__opened");
+  popupEditProfile.classList.remove("popup__opened");
 }
 
 function handleChangeFirstName(evt) {
@@ -115,6 +117,12 @@ function createCard(card) {
     popupLargeImage.classList.remove("popup__opened");
   });
 
+  popupLargeImage.addEventListener("click", function (evt) {
+    if (evt.target.classList.contains("popup")) {
+      popupLargeImage.classList.remove("popup__opened");
+    }
+  });
+
   popupButtonAddCard.addEventListener("click", handleOpenPopupAdd);
   popupClosedAddCard.addEventListener("click", function () {
     ClosePopupAdd();
@@ -151,10 +159,22 @@ popupClosedAddCard.addEventListener("click", function () {
 });
 formAddCard.addEventListener("submit", handleAddNewCard);
 
+popupOpenAddCard.addEventListener("click", function (evt) {
+  if (evt.target.classList.contains("popup")) {
+    ClosePopupAdd();
+  }
+});
+
 //events Profile Edit
 popupButtonEditProfile.addEventListener("click", handleOpenPopup);
 formProfileName.addEventListener("submit", handleChangeFirstName);
 formProfileAboutMe.addEventListener("submit", handleChangeAboutMe);
-popUpClosedButton.addEventListener("click", function () {
+popUpClosedEditButton.addEventListener("click", function () {
   ClosePopUp();
+});
+
+popupEditProfile.addEventListener("click", function (evt) {
+  if (evt.target.classList.contains("popup")) {
+    ClosePopUp();
+  }
 });
