@@ -1,3 +1,12 @@
+export const validationSettings = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__submit-button",
+  inactiveButtonClass: "popup__submit-button-disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__input-error-active",
+};
+
 function showInputError(formElement, inputElement, settings) {
   const errorMessage = inputElement.validationMessage;
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
@@ -65,11 +74,4 @@ function enableValidation(settings) {
   });
 }
 
-enableValidation({
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__submit-button",
-  inactiveButtonClass: "popup__submit-button-disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__input-error-active",
-});
+enableValidation(validationSettings);
