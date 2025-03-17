@@ -74,4 +74,22 @@ function enableValidation(settings) {
   });
 }
 
+export function resetValidations(settings) {
+  const forms = Array.from(document.querySelectorAll(settings.formSelector));
+  forms.forEach((formElement) => {
+    const inputList = Array.from(
+      formElement.querySelectorAll(settings.inputSelector)
+    );
+    const buttonElement = formElement.querySelector(
+      settings.submitButtonSelector
+    );
+    formElement.reset();
+    inputList.forEach((inputElement) => {
+      hideInputError(formElement, inputElement, settings);
+    });
+    buttonElement.classList.add(settings.inactiveButtonClass);
+    buttonElement.disabled = true;
+  });
+}
+
 enableValidation(validationSettings);
