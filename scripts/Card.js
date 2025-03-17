@@ -1,7 +1,7 @@
 const templateElementCard = document.querySelector("#template-card");
 
 export default class Card {
-  constructor(name, link, templateSelector) {
+  constructor(name, link, templateSelector, openLargeImage) {
     this.name = name;
     this.link = link;
     this.cardSelector = templateSelector;
