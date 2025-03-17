@@ -57,7 +57,7 @@
           <!--Popup para editar perfil-->
           <section class="popup" id="popup-edit-profile">
             <div class="popup__container">
-              <form class="popup__form" id="popup-form-edit">
+              <form class="popup__form" id="popup-form-edit" novalidate>
                 <img
                   src="./images/close-icon.png"
                   alt="icono X para cerrar"
@@ -72,8 +72,13 @@
                     name="first-name"
                     placeholder="Nombre"
                     class="popup__input"
+                    minlength="2"
+                    maxlength="40"
                     required
                   />
+                  <span class="popup__input-error-message" id="first-name-error"
+                    >Por favor, rellena este campo.</span
+                  >
                 </fieldset>
                 <fieldset class="popup__fieldset">
                   <input
@@ -81,9 +86,14 @@
                     id="about-me"
                     name="about-me"
                     placeholder="Acerca de mí"
-                    class="popup__input popup__input-about"
+                    class="popup__input"
+                    minlength="2"
+                    maxlength="200"
                     required
                   />
+                  <span class="popup__input-error-message" id="about-me-error"
+                    >Por favor, rellena este campo.</span
+                  >
                 </fieldset>
                 <fieldset class="popup__fieldset">
                   <button type="submit" class="popup__submit-button">
@@ -110,7 +120,7 @@
           <!--Popup para anadir tarjeta-->
           <section class="popup" id="popup-add-card">
             <div class="popup__container">
-              <form class="popup__form" id="form-popup-add-card">
+              <form class="popup__form" id="form-popup-add-card" novalidate>
                 <img
                   src="./images/close-icon.png"
                   alt="icono X para cerrar"
@@ -122,21 +132,31 @@
                   <input
                     type="text"
                     id="card-title"
-                    name="title"
+                    name="card-title"
                     placeholder="Título"
                     class="popup__input"
+                    minlength="2"
+                    maxlength="30"
                     required
                   />
+                  <span class="popup__input-error-message" id="card-title-error"
+                    >Por favor, rellena este campo.</span
+                  >
                 </fieldset>
                 <fieldset class="popup__fieldset">
                   <input
                     type="url"
                     id="card-link-to-image"
-                    name="link to image"
+                    name="card-link-to-image"
                     placeholder="Enlace a la imagen"
-                    class="popup__input popup__input-about"
+                    class="popup__input"
                     required
                   />
+                  <span
+                    class="popup__input-error-message"
+                    id="card-link-to-image-error"
+                    >Por favor, introduce una dirección web.</span
+                  >
                 </fieldset>
                 <fieldset class="popup__fieldset">
                   <button type="submit" class="popup__submit-button">
@@ -201,6 +221,6 @@
         <p class="footer__copyright">© 2024 Around The U.S.</p>
       </footer>
     </div>
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" type="module"></script>
   </body>
 </html>
