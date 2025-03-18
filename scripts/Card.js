@@ -8,7 +8,7 @@ export default class Card {
     this.openLargeImage = openLargeImage;
   }
 
-  getCloneTemplateCard() {
+  _getCloneTemplateCard() {
     return templateElementCard
       .cloneNode(true)
       .content.querySelector(".element");
@@ -16,7 +16,7 @@ export default class Card {
 
   //getView
   generateCard() {
-    this.element = this.getCloneTemplateCard();
+    this.element = this._getCloneTemplateCard();
     this.elementCardTitle = this.element.querySelector(".element__title");
     this.elementCardUrlImage = this.element.querySelector(".element__image");
 
@@ -27,22 +27,22 @@ export default class Card {
     this.elementCardUrlImage.src = this.link;
     this.elementCardUrlImage.alt = this.name;
 
-    this.setEventListeners();
+    this._setEventListeners();
 
     return this.element;
   }
 
-  handleLikeCard = () => {
+  _handleLikeCard = () => {
     this.likeButton.classList.toggle("element__like-button-image-active");
   };
 
-  handleDeleteCard = () => {
+  _handleDeleteCard = () => {
     this.element.remove();
   };
 
-  setEventListeners() {
-    this.deleteCardButton.addEventListener("click", this.handleDeleteCard);
-    this.likeButton.addEventListener("click", this.handleLikeCard);
+  _setEventListeners() {
+    this.deleteCardButton.addEventListener("click", this._handleDeleteCard);
+    this.likeButton.addEventListener("click", this._handleLikeCard);
     this.elementCardUrlImage.addEventListener("click", () =>
       this.openLargeImage(this)
     );
