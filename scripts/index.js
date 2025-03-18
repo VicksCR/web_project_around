@@ -1,7 +1,29 @@
-const popupButtonEditProfile = document.querySelector("#button-edit-profile");
-const profileName = document.querySelector(".profile__name");
-const profileAboutMe = document.querySelector(".profile__aboutme");
+import { validationSettings, FormValidator } from "./FormValidator.js";
+import Card from "./Card.js";
+import {
+  popupEditProfile,
+  formProfileName,
+  formProfileAboutMe,
+  formAddCard,
+  popupOpenAddCard,
+  popupLargeImage,
+  handleOpenPopup,
+  ClosePopUp,
+  handleOpenPopupAdd,
+  ClosePopupAdd,
+  openLargeImage,
+  closeLargeImage,
+  handleOverlayClickEditProfile,
+  handleOverlayClickAddCard,
+  handleOverlayClickLargeImage,
+  handleEscapeKeyEditProfile,
+  handleEscapeKeyAddCard,
+  handleEscapeKeyLargeImage,
+  handleChangeFirstName,
+  handleChangeAboutMe,
+} from "./utils.js";
 
+<<<<<<< HEAD
 const popupEditProfile = document.querySelector("#popup-edit-profile");
 const popUpClosedEditButton = document.querySelector(
   "#popup-close-edit-profile"
@@ -10,6 +32,12 @@ const formInputName = document.querySelector("#first-name");
 const formInputAboutMe = document.querySelector("#about-me");
 const formProfileName = document.querySelector("#popup-form-edit");
 const formProfileAboutMe = document.querySelector("#popup-form-edit");
+=======
+const popupButtonEditProfile = document.querySelector("#button-edit-profile");
+const popUpClosedEditButton = document.querySelector(
+  "#popup-close-edit-profile"
+);
+>>>>>>> develop
 
 //Tarjeta con arreglo
 const initialCards = [
@@ -38,24 +66,19 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
   },
 ];
+
 const CardsContainer = document.querySelector("#elements-container-cards");
 const popupButtonAddCard = document.querySelector("#button-add-card");
-const popupOpenAddCard = document.querySelector("#popup-add-card");
 const popupClosedAddCard = document.querySelector("#popup-add-card-close");
-const templateElementCard = document.querySelector("#template-card");
 
 const inputCardTitle = document.querySelector("#card-title");
 const inputCardUrlImage = document.querySelector("#card-link-to-image");
-const formAddCard = document.querySelector("#form-popup-add-card");
 
-// popup image
-const popupLargeImage = document.querySelector("#popup-image");
-const popupImageElement = document.querySelector("#popup-large-image");
-const popupImageTitle = document.querySelector("#popup-big-image-title");
 const popupClosedLargeImage = document.querySelector(
   "#popup-large-image-close"
 );
 
+<<<<<<< HEAD
 // functions edit profile
 function handleOpenPopup() {
   popupEditProfile.classList.add("popup__opened");
@@ -64,42 +87,29 @@ function handleOpenPopup() {
 function ClosePopUp() {
   popupEditProfile.classList.remove("popup__opened");
 }
+=======
+//Eventos de Profile Edit
+popupButtonEditProfile.addEventListener("click", handleOpenPopup);
+formProfileName.addEventListener("submit", handleChangeFirstName);
+formProfileAboutMe.addEventListener("submit", handleChangeAboutMe);
+popUpClosedEditButton.addEventListener("click", ClosePopUp);
 
-function handleChangeFirstName(evt) {
-  evt.preventDefault();
-  profileName.textContent = formInputName.value;
-  ClosePopUp();
-}
+popupEditProfile.addEventListener("click", (evt) =>
+  handleOverlayClickEditProfile(evt)
+);
+>>>>>>> develop
 
-function handleChangeAboutMe(evt) {
-  evt.preventDefault();
-  profileAboutMe.textContent = formInputAboutMe.value;
-  ClosePopUp();
-}
+document.addEventListener("keydown", (evt) => handleEscapeKeyEditProfile(evt));
 
-//functions create new card
+//Funciones de create new card
 function createCard(card) {
-  const cardElementClone = templateElementCard.content
-    .querySelector(".element")
-    .cloneNode(true);
-  const elementCardTitle = cardElementClone.querySelector(".element__title");
-  const elementCardUrlImage = cardElementClone.querySelector(".element__image");
-
-  elementCardTitle.textContent = card.name;
-  elementCardUrlImage.src = card.link;
-  elementCardUrlImage.alt = card.name;
-
-  //Large Image
-  elementCardUrlImage.addEventListener("click", function () {
-    popupImageElement.src = card.link;
-    popupImageElement.alt = card.name;
-    popupImageTitle.textContent = card.name;
-    popupLargeImage.classList.add("popup__opened");
-  });
-
-  const CardLikeButtonActive = cardElementClone.querySelector(
-    ".element__like-button-image"
+  const cardNew = new Card(
+    card.name,
+    card.link,
+    "#template-card",
+    openLargeImage
   );
+<<<<<<< HEAD
 
   CardLikeButtonActive.addEventListener("click", function (evt) {
     CardLikeButtonActive.classList.toggle("element__like-button-image-active");
@@ -135,19 +145,28 @@ function createCard(card) {
   });
 
   CardsContainer.prepend(cardElementClone);
+=======
+  const cardElement = cardNew.generateCard();
+  CardsContainer.prepend(cardElement);
+>>>>>>> develop
 }
 
 initialCards.forEach(createCard);
 
-function handleOpenPopupAdd() {
-  popupOpenAddCard.classList.add("popup__opened");
-}
+//Eventos de Add Card
+popupButtonAddCard.addEventListener("click", handleOpenPopupAdd);
+popupClosedAddCard.addEventListener("click", ClosePopupAdd);
+formAddCard.addEventListener("submit", handleAddNewCard);
 
-function ClosePopupAdd() {
-  popupOpenAddCard.classList.remove("popup__opened");
-}
+popupOpenAddCard.addEventListener("click", (evt) => {
+  handleOverlayClickAddCard(evt);
+});
 
-//manejar envio de formulario nueva tarjeta
+document.addEventListener("keydown", (evt) => {
+  handleEscapeKeyAddCard(evt);
+});
+
+//Manejar envio de formulario nueva tarjeta
 function handleAddNewCard(evt) {
   evt.preventDefault();
   const newCard = {
@@ -158,13 +177,11 @@ function handleAddNewCard(evt) {
   ClosePopupAdd();
 }
 
-//events Add Card
-popupButtonAddCard.addEventListener("click", handleOpenPopupAdd);
-popupClosedAddCard.addEventListener("click", function () {
-  ClosePopupAdd();
+popupClosedLargeImage.addEventListener("click", (evt) => {
+  closeLargeImage(evt);
 });
-formAddCard.addEventListener("submit", handleAddNewCard);
 
+<<<<<<< HEAD
 popupOpenAddCard.addEventListener("click", function (evt) {
   if (evt.target.classList.contains("popup")) {
     ClosePopupAdd();
@@ -183,6 +200,14 @@ formProfileName.addEventListener("submit", handleChangeFirstName);
 formProfileAboutMe.addEventListener("submit", handleChangeAboutMe);
 popUpClosedEditButton.addEventListener("click", function () {
   ClosePopUp();
+=======
+popupLargeImage.addEventListener("click", (evt) => {
+  handleOverlayClickLargeImage(evt);
+});
+
+document.addEventListener("keydown", (evt) => {
+  handleEscapeKeyLargeImage(evt);
+>>>>>>> develop
 });
 
 popupEditProfile.addEventListener("click", function (evt) {
