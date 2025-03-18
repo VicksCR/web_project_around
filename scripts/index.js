@@ -23,21 +23,10 @@ import {
   handleChangeAboutMe,
 } from "./utils.js";
 
-<<<<<<< HEAD
-const popupEditProfile = document.querySelector("#popup-edit-profile");
-const popUpClosedEditButton = document.querySelector(
-  "#popup-close-edit-profile"
-);
-const formInputName = document.querySelector("#first-name");
-const formInputAboutMe = document.querySelector("#about-me");
-const formProfileName = document.querySelector("#popup-form-edit");
-const formProfileAboutMe = document.querySelector("#popup-form-edit");
-=======
 const popupButtonEditProfile = document.querySelector("#button-edit-profile");
 const popUpClosedEditButton = document.querySelector(
   "#popup-close-edit-profile"
 );
->>>>>>> develop
 
 //Tarjeta con arreglo
 const initialCards = [
@@ -78,16 +67,6 @@ const popupClosedLargeImage = document.querySelector(
   "#popup-large-image-close"
 );
 
-<<<<<<< HEAD
-// functions edit profile
-function handleOpenPopup() {
-  popupEditProfile.classList.add("popup__opened");
-}
-
-function ClosePopUp() {
-  popupEditProfile.classList.remove("popup__opened");
-}
-=======
 //Eventos de Profile Edit
 popupButtonEditProfile.addEventListener("click", handleOpenPopup);
 formProfileName.addEventListener("submit", handleChangeFirstName);
@@ -97,7 +76,6 @@ popUpClosedEditButton.addEventListener("click", ClosePopUp);
 popupEditProfile.addEventListener("click", (evt) =>
   handleOverlayClickEditProfile(evt)
 );
->>>>>>> develop
 
 document.addEventListener("keydown", (evt) => handleEscapeKeyEditProfile(evt));
 
@@ -109,46 +87,8 @@ function createCard(card) {
     "#template-card",
     openLargeImage
   );
-<<<<<<< HEAD
-
-  CardLikeButtonActive.addEventListener("click", function (evt) {
-    CardLikeButtonActive.classList.toggle("element__like-button-image-active");
-  });
-
-  const deleteCardButton = cardElementClone.querySelector(
-    "#delete-card-button"
-  );
-
-  deleteCardButton.addEventListener("click", function (evt) {
-    cardElementClone.remove();
-  });
-
-  popupClosedLargeImage.addEventListener("click", function () {
-    popupLargeImage.classList.remove("popup__opened");
-  });
-
-  popupLargeImage.addEventListener("click", function (evt) {
-    if (evt.target.classList.contains("popup")) {
-      popupLargeImage.classList.remove("popup__opened");
-    }
-  });
-
-  document.addEventListener("keydown", function (evt) {
-    if (evt.key === "Escape") {
-      popupLargeImage.classList.remove("popup__opened");
-    }
-  });
-
-  popupButtonAddCard.addEventListener("click", handleOpenPopupAdd);
-  popupClosedAddCard.addEventListener("click", function () {
-    ClosePopupAdd();
-  });
-
-  CardsContainer.prepend(cardElementClone);
-=======
   const cardElement = cardNew.generateCard();
   CardsContainer.prepend(cardElement);
->>>>>>> develop
 }
 
 initialCards.forEach(createCard);
@@ -181,33 +121,12 @@ popupClosedLargeImage.addEventListener("click", (evt) => {
   closeLargeImage(evt);
 });
 
-<<<<<<< HEAD
-popupOpenAddCard.addEventListener("click", function (evt) {
-  if (evt.target.classList.contains("popup")) {
-    ClosePopupAdd();
-  }
-});
-
-document.addEventListener("keydown", function (evt) {
-  if (evt.key === "Escape") {
-    ClosePopupAdd();
-  }
-});
-
-//events Profile Edit
-popupButtonEditProfile.addEventListener("click", handleOpenPopup);
-formProfileName.addEventListener("submit", handleChangeFirstName);
-formProfileAboutMe.addEventListener("submit", handleChangeAboutMe);
-popUpClosedEditButton.addEventListener("click", function () {
-  ClosePopUp();
-=======
 popupLargeImage.addEventListener("click", (evt) => {
   handleOverlayClickLargeImage(evt);
 });
 
 document.addEventListener("keydown", (evt) => {
   handleEscapeKeyLargeImage(evt);
->>>>>>> develop
 });
 
 popupEditProfile.addEventListener("click", function (evt) {
