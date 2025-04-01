@@ -22,6 +22,7 @@ import {
   handleChangeFirstName,
   handleChangeAboutMe,
 } from "./utils.js";
+import Section from "./Section.js";
 
 const popupButtonEditProfile = document.querySelector("#button-edit-profile");
 const popUpClosedEditButton = document.querySelector(
@@ -87,11 +88,20 @@ function createCard(card) {
     "#template-card",
     openLargeImage
   );
-  const cardElement = cardNew.generateCard();
-  CardsContainer.prepend(cardElement);
+  return cardNew.generateCard();
 }
 
-initialCards.forEach(createCard);
+const cardSection = new Section(
+  {
+    items: initialCards,
+    renderer: (item) => {
+      const cardElement = createCard(item);
+      cardSection.addItem(cardElement);
+    },
+  },
+  ".elements"
+);
+cardSection.renderItems();
 
 //Eventos de Add Card
 popupButtonAddCard.addEventListener("click", handleOpenPopupAdd);
