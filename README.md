@@ -1,4 +1,4 @@
-NOMBRE DEL PROYECTO: Alrededor de los EE.UU.
+NOMBRE DEL PROYECTO: Alrededor de los EE.UU. (web_project_around)
 
 DESCRIPCION DEL PROYECTO Y SU FUNCIONALIDAD:
 Creacion de una pagina web con elemento responsivos en diferentes resoluciones y formatos además de la practica de JavaScript básico para hacer la pagina web interactiva.
@@ -9,6 +9,7 @@ DESCRIPCION DE LAS TECNOLOGIAS Y TECNICAS UTILIZADAS:
 En el sprit 11 se utilizo la refactorizacion con POO y la implementacion de una reorganizacion del codigo JS para encapsular funciones especificas.
 Interactividad avanzada para que espacio interactue con la pagina web a traves de un "Me gusta", eliminar la tarjeta, generar nuevas y ver las imagenes en un popup.
 Validacion de formularios para saber si un campo ingresado por el ususario es valido con respecto a los requerimientos basicosy mejorando la experiencia del usuario y la entrada correcta de informacion.
+Para el sprint 12 se reforzo e implemento el uso API para almacenar y gestionar datos en tiempo real
 
 PLANES DE MEJORA: Reforzar conocimientos de Javascript ademas de familiarizarme con la terminologia. Comprender como es que este lenguaje de programacion funciona y como se relaciona con html y css para que la pagina web funcione de manera optima con el usuario.
 Reforzar la utilizacion de funciones, objetos y propiedades para un mejor entendimiento y ejecucion de javascript y el mejor uso y optimizacion de elementos.

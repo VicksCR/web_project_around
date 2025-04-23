@@ -7,7 +7,7 @@
     <meta name="description" content="TripleTen Around the US" />
     <meta
       name="keywords"
-      content="Interactive page, JavaScript, CSS, photography"
+      content="Interactive page, JavaScript, CSS, photography, POO, API"
     />
     <title>Alrededor de los EEUU</title>
     <link rel="stylesheet" href="./vendor/fonts.css" />
@@ -26,17 +26,57 @@
       </header>
       <main class="content">
         <section class="profile">
-          <div class="profile__avatar-container">
-            <div class="profile__avatar-circle"></div>
+          <!--Boton para editar la foto-->
+          <section class="profile__avatar-container">
+            <button
+              type="button"
+              class="profile__avatar-button"
+              id="button-avatar"
+            ></button>
             <img
-              src="./images/avatar.png"
+              src=""
               alt="Avatar with profile image"
               class="profile__avatar"
             />
-          </div>
+          </section>
           <div class="profile__info">
             <div class="profile__container">
-              <h1 class="profile__name">Jacques Cousteau</h1>
+              <h1 class="profile__name"></h1>
+
+              <!--Popup para editar avatar de perfil-->
+              <section class="popup" id="popup-avatar">
+                <div class="popup__container popup__container-avatar">
+                  <form class="popup__form" id="popup__form-avatar" novalidate>
+                    <img
+                      src="./images/close-icon.png"
+                      alt="icono X para cerrar"
+                      class="popup__close-image"
+                      id="popup-close-edit-profile"
+                    />
+                    <h2 class="popup__title">Cambiar foto de perfil</h2>
+                    <fieldset class="popup__fieldset">
+                      <input
+                        type="url"
+                        id="avatar-link"
+                        name="avatar"
+                        placeholder="Enlace de imagen de perfil"
+                        class="popup__input"
+                        required
+                      />
+                      <span
+                        class="popup__input-error-message"
+                        id="avatar-link-error"
+                        >Por favor, introduce una enlace de imagen.
+                      </span>
+                    </fieldset>
+                    <fieldset class="popup__fieldset">
+                      <button type="submit" class="popup__submit-button">
+                        Guardar
+                      </button>
+                    </fieldset>
+                  </form>
+                </div>
+              </section>
 
               <!--Boton para editar el perfil-->
               <button
@@ -51,7 +91,7 @@
                 />
               </button>
             </div>
-            <p class="profile__aboutme">Explorador</p>
+            <p class="profile__aboutme"></p>
           </div>
 
           <!--Popup para editar perfil-->
@@ -69,7 +109,7 @@
                   <input
                     type="text"
                     id="first-name"
-                    name="first-name"
+                    name="name"
                     placeholder="Nombre"
                     class="popup__input"
                     minlength="2"
@@ -84,7 +124,7 @@
                   <input
                     type="text"
                     id="about-me"
-                    name="about-me"
+                    name="about"
                     placeholder="Acerca de mí"
                     class="popup__input"
                     minlength="2"
@@ -132,7 +172,7 @@
                   <input
                     type="text"
                     id="card-title"
-                    name="card-title"
+                    name="name"
                     placeholder="Título"
                     class="popup__input"
                     minlength="2"
@@ -147,7 +187,7 @@
                   <input
                     type="url"
                     id="card-link-to-image"
-                    name="card-link-to-image"
+                    name="link"
                     placeholder="Enlace a la imagen"
                     class="popup__input"
                     required
@@ -196,6 +236,28 @@
               </div>
             </div>
           </template>
+        </section>
+
+        <!--Popup para eliminar una tarjeta-->
+        <section class="popup" id="popup-confirm-delete">
+          <div class="popup__container popup__container-confirm-delete">
+            <form
+              class="popup__form"
+              id="popup__form-confirm-delete"
+              novalidate
+            >
+              <img
+                src="./images/close-icon.png"
+                alt="icono X para cerrar"
+                class="popup__close-image"
+                id="popup-confirm-delete-close"
+              />
+              <h2 class="popup__title">¿Estás seguro?</h2>
+              <fieldset class="popup__fieldset">
+                <button type="submit" class="popup__submit-button">Sí</button>
+              </fieldset>
+            </form>
+          </div>
         </section>
 
         <!--Popup para agrandar imagen-->

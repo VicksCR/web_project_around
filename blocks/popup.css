@@ -23,6 +23,18 @@
   border-radius: 10px;
 }
 
+.popup__container-avatar {
+  height: 272px;
+}
+
+.popup__container-confirm-delete {
+  height: 181px;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;*/
+}
+
 .popup__image-container {
   position: relative;
 }
@@ -45,8 +57,10 @@
   margin: 0;
 }
 .popup__form {
-  width: 430px;
-  height: 330px;
+  width: 100%;
+  height: 100%;
+  /*width: 430px;
+  height: 330px;*/
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
