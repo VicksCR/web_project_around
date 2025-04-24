@@ -43,7 +43,9 @@ export default class Card {
         this._isLiked = newState;
         this._updateLikeButton();
       })
-      .catch((err) => console.error("Error al cambiar like:", err));
+      .catch(() => {
+        this._updateLikeButton();
+      });
   }
 
   _updateLikeButton() {

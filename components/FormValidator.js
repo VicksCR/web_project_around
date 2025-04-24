@@ -17,7 +17,6 @@ export class FormValidator {
     this._buttonElement = this._formElement.querySelector(
       this._settings.submitButtonSelector
     );
-    //this._toggleButtonState();
   }
 
   _showInputError(inputElement, errorMessage) {

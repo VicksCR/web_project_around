@@ -16,7 +16,6 @@ class Api {
         return res.json();
       })
       .then((result) => {
-        console.log(result);
         return result;
       });
   }
@@ -33,7 +32,6 @@ class Api {
         return res.json();
       })
       .then((result) => {
-        console.log(result);
         return result;
       });
   }
@@ -51,7 +49,6 @@ class Api {
         return res.json();
       })
       .then((result) => {
-        console.log("Perfil actualizado:", result);
         return result;
       });
   }
@@ -73,7 +70,6 @@ class Api {
         return res.json();
       })
       .catch((err) => {
-        console.error("Error al agregar la tarjeta:", err);
         return Promise.reject(err);
       });
   }
@@ -90,7 +86,6 @@ class Api {
         return res.json();
       })
       .catch((err) => {
-        console.error("Error al alternar 'me gusta':", err);
         return Promise.reject(err);
       });
   }
@@ -120,7 +115,6 @@ class Api {
         return res.json();
       })
       .then((result) => {
-        console.log("Imagen de Avatar actualizado:", result);
         return result;
       });
   }

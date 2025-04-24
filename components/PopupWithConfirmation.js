@@ -13,9 +13,6 @@ export default class PopupWithConfirmation extends Popup {
       : null;
 
     if (!this._submitButton) {
-      console.error(
-        `No se activo el boton de envio en el popup: ${popupSelector}`
-      );
       return;
     }
     this._submitButtonText = this._submitButton.textContent;
